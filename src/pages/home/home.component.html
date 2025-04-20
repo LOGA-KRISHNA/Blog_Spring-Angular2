@@ -1,0 +1,39 @@
+<div class="main-content">
+  <div class="grid-container">
+    @for (post of posts; track $index) {
+      @if (post) {
+      <div class="grid-item">
+        <mat-card class="item-card">
+          <img mat-card-image [src]="post.image" [alt]="post.name" class="item-image">
+          <mat-card-content>
+            <h3 class="item-title">{{post.name}}</h3>
+            <p class="item-description">{{truncateContent(post.content, 100)}}</p>
+          </mat-card-content>
+
+          <mat-card-footer class="item-footer">
+            <p class="item-footer-item">Views: {{post.viewcount}}</p>
+            <p class="item-footer-item">Likes: {{post.likecount}}</p>
+          </mat-card-footer>
+
+          <mat-card-actions>
+            <button mat-raised-button color="primary" [routerLink]="['/post', post.id]">View Details</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    }
+    @else{
+      <div class="grid-item">
+        <mat-card class="item-card">
+          <mat-card-content>
+            <h3 class="item-title">No posts available</h3>
+            <p class="item-description">Please check back later.</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-raised-button color="primary" [routerLink]="['/create-post']">Create a Post</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    }
+    }
+  </div>
+</div>
