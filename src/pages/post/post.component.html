@@ -7,7 +7,7 @@
                 <mat-card-subtitle>Posted by {{ postData.postedBy }}</mat-card-subtitle>
             </mat-card-header>
             <img mat-card-image [src]="postData.image" height="300px" alt="Post image">
-            <mat-card-content class="post-content">
+            <mat-card-content class="post-content" style="color: white;">
                 {{ postData.content }}
             </mat-card-content>
             <br>
@@ -22,5 +22,61 @@
                     <mat-icon>remove_red_eye</mat-icon></button>
             </mat-card-actions>
         </mat-card>
+
+        <div class="comment-card">
+            <h4 style="color: black;">Publish the comment</h4>
+            <form [formGroup]="commentForm">
+              <div class="form-group">
+                <label for="comment">Comment</label>
+                <textarea
+                  id="content"
+                  formControlName="content"
+                  placeholder="Enter your comment"
+                  rows="4"
+                ></textarea>
+              </div>
+          
+              <div class="form-group">
+                <label for="postedBy">Posted By</label>
+                <input
+                  id="postedBy"
+                  type="text"
+                  formControlName="postedBy"
+                  placeholder="Enter your name"
+                />
+              </div>
+          
+              <button
+                type="submit"
+                
+                class="btn"
+                (click)="publishComment()"
+              >
+                Publish
+              </button>
+            </form>
+          </div>
+        
+          <div class="comment">
+            <h4>Comments</h4>
+          
+            @for (comment of comments; track comment) {
+              <div class="comment-card">
+                <div class="comment-header">
+                  <div class="avatar"></div>
+                  <div class="comment-date">{{ comment.postedBy }}</div>
+                  <div class="comment-date">{{ comment.createdAt | date: 'short' }}</div>
+                </div>
+                <div class="post-content">
+                  {{ comment.content }}
+                </div>
+              </div>
+            }
+          
+            @if (!comments || comments.length === 0) {
+              <p>No comments available</p>
+            }
+          </div>
+          
     }
 </div>
