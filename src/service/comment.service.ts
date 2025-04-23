@@ -15,10 +15,10 @@ export class CommentService {
       post_id:post_id,
       postedBy:postedBy
     }
-    return this.http.post(`${url}/api/comment/create`,content,{params});
+    return this.http.post(`/api/comment/create`,content,{params});
   }
 
   getAllPostById(post_id:number):Observable<any>{
-    return this.http.get(`${url}/api/comment/${post_id}`);
+    return this.http.get(`/api/comment/${post_id}`);
   }
 }

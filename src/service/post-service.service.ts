@@ -11,18 +11,18 @@ export class PostServiceService {
   constructor(private http: HttpClient) { }
 
   createPost(data: any): Observable<any> {
-    return this.http.post(`${url}/api/posts`, data);
+    return this.http.post(`/api/posts`, data);
   }
 
   getAllPosts(): Observable<any> {
-    return this.http.get(`${url}/api/posts`);
+    return this.http.get(`/api/posts`);
   }
   getPostByID(id:number): Observable<any> {
-    return this.http.get(`${url}/api/posts/${id}`);
+    return this.http.get(`/api/posts/${id}`);
   }
 
   likePost(id:number): Observable<any> {
-    return this.http.put(`${url}/api/posts/${id}/like`,{});
+    return this.http.put(`/api/posts/${id}/like`,{});
   }
 
 }
