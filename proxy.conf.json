@@ -2,6 +2,7 @@
   "/api": {
     "target": "https://blog-springbootbackend-50026124227.development.catalystappsail.in",
     "secure": false,
-    "changeOrigin": true
+    "changeOrigin": true,
+    "logLevel": "debug"
   }
 }
