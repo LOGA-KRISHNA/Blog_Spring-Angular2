@@ -7,10 +7,14 @@
       "**/node_modules/**"
     ],
     "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ]
+    {
+      "source": "/api/**",
+      "destination": "https://blog-springbootbackend-50026124227.development.catalystappsail.in/**"
+    },
+    {
+      "source": "**",
+      "destination": "/index.html"
+    }
+  ]
   }
 }

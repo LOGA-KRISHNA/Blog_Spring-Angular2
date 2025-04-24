@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-const url="https://blog-springbootbackend-50026124227.development.catalystappsail.in";
+
 @Injectable({
   providedIn: 'root'
 })
