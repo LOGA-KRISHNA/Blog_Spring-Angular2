@@ -1,16 +1,12 @@
 {
   "hosting": {
-    "public": "dist/blog-web/browser",
+    "public": "dist/browser",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
     ],
     "rewrites": [
-      {
-        "source": "/api/**",
-        "destination": "https://blog-springbootbackend-50026124227.development.catalystappsail.in/api/**"
-      },
       {
         "source": "**",
         "destination": "/index.html"

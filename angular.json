@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/blog-web",
+            "outputPath": "dist",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -60,8 +60,7 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "blogWeb:build:production",
-              "proxyConfig": "proxy.conf.json"
+              "buildTarget": "blogWeb:build:production"
             },
             "development": {
               "buildTarget": "blogWeb:build:development",
