@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../environments/environment';
-const API_URL = 'https://blog-springbootbackend-50026124227.development.catalystappsail.in'; // Replace with your actual API URL
+const API_URL = 'https://blog-springbootbackend-50026124227.development.catalystappsail.in/api'; // Replace with your actual API URL
 @Injectable({
   providedIn: 'root'
 })
