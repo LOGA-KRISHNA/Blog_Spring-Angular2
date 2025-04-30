@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../environments/environment';
 
+const API_URL = 'https://blog-springbootbackend-50026124227.development.catalystappsail.in/api';
 @Injectable({
   providedIn: 'root'
 })
@@ -10,19 +11,19 @@ export class PostServiceService {
   constructor(private http: HttpClient) { }
 
   createPost(data: any): Observable<any> {
-    return this.http.post(`${environment.apiUrl}/posts`, data);
+    return this.http.post(`${API_URL}/posts`, data);
   }
 
   getAllPosts(): Observable<any> {
-    return this.http.get(`${environment.apiUrl}/posts`);
+    return this.http.get(`${API_URL}/posts`);
   }
 
   getPostByID(id: number): Observable<any> {
-    return this.http.get(`${environment.apiUrl}/posts/${id}`);
+    return this.http.get(`${API_URL}/posts/${id}`);
   }
 
   likePost(id: number): Observable<any> {
-    return this.http.put(`${environment.apiUrl}/posts/${id}/like`, {});
+    return this.http.put(`${API_URL}/posts/${id}/like`, {});
   }
   //Hello
 }
