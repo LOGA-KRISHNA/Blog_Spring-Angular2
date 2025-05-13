@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../environments/environment';
 
-const API_URL = 'https://springangularbackend-50026124227.development.catalystappsail.in/api';
+const API_URL = 'https://blogspring-angular-production.up.railway.app/api';
 @Injectable({
   providedIn: 'root'
 })
