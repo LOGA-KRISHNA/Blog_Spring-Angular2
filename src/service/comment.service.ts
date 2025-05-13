@@ -12,9 +12,10 @@ export class CommentService {
   createComment(post_id: number, postedBy: string, content: string): Observable<any> {
     const params = {
       postId: post_id.toString(),
-      postedBy: postedBy
+      postedBy: postedBy,
+      content: content
     };
-    return this.http.post(`${API_URL}/comment/create`, { content }, { params });
+    return this.http.post(`${API_URL}/comment/create`,{ params });
   }
 
   getAllPostById(post_id: number): Observable<any> {
